@@ -1,0 +1,32 @@
+<div id="<%= dom_id salary %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= salary.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Company:</strong>
+    <%= salary.company %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= salary.city %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Seniority:</strong>
+    <%= salary.seniority %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Salary:</strong>
+    <%= salary.salary %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this salary", salary, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this salary', edit_salary_path(salary), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
