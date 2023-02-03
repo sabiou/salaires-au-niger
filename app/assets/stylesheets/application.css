@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+/*noinspection CssUnknownTarget*/
+@import url('//fonts.googleapis.com/css2?family=Chivo&family=Rubik:wght@300&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
