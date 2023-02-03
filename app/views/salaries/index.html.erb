@@ -9,7 +9,12 @@
   </div>
   <h2 class="font-semibold pt-2">Contribuer à la plateforme en ajoutant votre salaire.
     <span class="italic bg-orange-800 p-1 text-white font-thin">C'est 100% anonyme</span></h2>
-  <div id="salaries" class="min-w-full pt-16">
+  <div>
+    <%= form_with url: salaries_path, method: :get do %>
+        <% text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
+    <% end %>
+  </div>
+  <div id="salaries" class="min-w-full pt-8">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
