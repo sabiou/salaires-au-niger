@@ -1,13 +1,18 @@
+
 class SalariesController < ApplicationController
   before_action :set_salary, only: %i[ show edit update destroy ]
 
   # GET /salaries or /salaries.json
+  # def index
+  #   @salaries = Salary.all
+  # end
   def index
-    @salaries = Salary.all
+    @salaries = Salary.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /salaries/1 or /salaries/1.json
   def show
+    @salary = Salary.find(params[:id])
   end
 
   # GET /salaries/new
@@ -25,8 +30,7 @@ class SalariesController < ApplicationController
 
     respond_to do |format|
       if @salary.save
-        format.html { redirect_to salary_url(@salary), notice: "Salary was successfully created." }
-        format.json { render :show, status: :created, location: @salary }
+        format.html { redirect_to salaries_url, notice: "Salaire ajouté avec succès." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @salary.errors, status: :unprocessable_entity }

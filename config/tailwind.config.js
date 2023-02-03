@@ -14,6 +14,9 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    colors : {
+      twitter: '#198CD8'
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
