@@ -7,7 +7,7 @@ class SalariesController < ApplicationController
   #   @salaries = Salary.all
   # end
   def index
-    @salaries = Salary.paginate(page: params[:page], per_page: 10)
+    @salaries = Salary.where("title LIKE ?", "%#{params[:filter]}%").all
   end
 
   # GET /salaries/1 or /salaries/1.json
