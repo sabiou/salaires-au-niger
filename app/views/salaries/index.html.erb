@@ -10,50 +10,51 @@
   <h2 class="font-semibold pt-2">Contribuer à la plateforme en ajoutant votre salaire.
     <span class="italic bg-orange-800 p-1 text-white font-thin">C'est 100% anonyme</span></h2>
   <div>
-    <%= form_with url: salaries_path, method: :get do %>
-        <% text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
+    <%= form_with url: salaries_path, method: :get, data: { turbo_frame: "salaries" } do %>
+      <%= text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
     <% end %>
   </div>
   <div id="salaries" class="min-w-full pt-8">
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-          <th scope="col" class="px-6 py-3">
-            Titre du poste
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Societé
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Ville
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Niveau
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Salaire brut mensuel
-          </th>
-        </tr>
-        </thead>
-        <tbody>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">
+              Titre du poste
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Societé
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Ville
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Niveau
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Salaire brut mensuel
+            </th>
+          </tr>
+          </thead>
+        <tbody id="salaries" is="turbo-frame">
         <% @salaries.each do |salary| %>
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 font-light">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white font-light">
-              <%= salary.title %>
-            </th>
-            <td class="px-6 py-4">
-              <%= salary.company %>
-            </td>
-            <td class="px-6 py-4">
-              <%= salary.city %>
-            </td>
-            <td class="px-6 py-4">
-              <%= salary.seniority %>
-            </td>
-            <td class="px-6 py-4">
-              <%= salary.salary %> FCFA
-            </td>
+              <th scope="row" class="px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white font-light">
+                <%= salary.title %>
+              </th>
+              <td class="px-6 py-4">
+                <%= salary.company %>
+              </td>
+              <td class="px-6 py-4">
+                <%= salary.city %>
+              </td>
+              <td class="px-6 py-4">
+                <%= salary.seniority %>
+              </td>
+              <td class="px-6 py-4">
+                <%= salary.salary %> FCFA
+              </td>
+            </tr>
           </tr>
         <% end %>
         </tbody>
