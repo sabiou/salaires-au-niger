@@ -29,6 +29,8 @@ gem "tailwindcss-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder", "2.11.5"
 
+gem 'pagy', '~> 6.0' # omit patch digit
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

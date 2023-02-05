@@ -1,9 +1,8 @@
-<div class="min-w-full flex flex-col justify-center items-center">
+<div class="min-w-full flex flex-col items-center ">
   <%= form_with(model: salary, class: "contents") do |form| %>
     <% if salary.errors.any? %>
-      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <div id="error_explanation" class="mt-16 bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg">
         <h2><%= pluralize(salary.errors.count, "error") %> prohibited this salary from being saved:</h2>
-
         <ul>
           <% salary.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -11,36 +10,35 @@
         </ul>
       </div>
     <% end %>
+    <div class="pt-16">
+      <div class="my-5">
+        <%= form.label "Titre du poste" %>
+        <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
+      </div>
 
-    <h1 class="font-bold text-3xl pt-32 pb-5">Ajouter salaire</h1>
+      <div class="my-5">
+        <%= form.label "Societé" %>
+        <%= form.text_field :company, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
+      </div>
 
-    <div class="my-5">
-      <%= form.label "Titre du poste" %>
-      <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
-    </div>
+      <div class="my-5">
+        <%= form.label "Ville" %>
+        <%= form.select(:city, %w[Agadez Diffa Dosso Maradi Niamey Tahoua Tillaberi Zinder], {}, { :class => 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96' }) %>
+      </div>
 
-    <div class="my-5">
-      <%= form.label "Societé" %>
-      <%= form.text_field :company, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
-    </div>
+      <div class="my-5">
+        <%= form.label "Experience" %>
+        <%= form.select(:seniority, %w[0-3ans 3-5ans +5ans], {}, { :class => 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96' }) %>
+      </div>
 
-    <div class="my-5">
-      <%= form.label "Ville" %>
-      <%= form.select(:city, %w[Agadez Diffa Dosso Maradi Niamey Tahoua Tillaberi Zinder], {}, { :class => 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96' }) %>
-    </div>
-
-    <div class="my-5">
-      <%= form.label "Experience" %>
-      <%= form.select(:seniority, %w[0-3ans 3-5ans +5ans], {}, { :class => 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96' }) %>
-    </div>
-
-    <div class="my-5">
-      <%= form.label "Salaire brut mensuel" %>
-      <%= form.number_field :salary, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
-    </div>
-    <div class="inline">
-      <%= form.submit "Ajouter", class: "my-5 rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-      <%= link_to 'Annuler', salaries_path, class: "my-5 ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <div class="my-5">
+        <%= form.label "Salaire brut mensuel" %>
+        <%= form.number_field :salary, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-96" %>
+      </div>
+      <div class="inline">
+        <%= form.submit "Ajouter", class: "my-5 rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+        <%= link_to 'Annuler', salaries_path, class: "my-5 ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <% end %>
+  </div>
   </div>
 </div>
