@@ -14,7 +14,7 @@ module SalariesHelper
   end
 
   def self.avg_salary(arr)
-    format_currency_to_xof(arr.sum(&:salary) / arr.size)
+    format_currency_to_xof(arr.sum(&:salary) / arr.size) rescue 0
   end
 
 end
