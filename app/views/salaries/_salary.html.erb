@@ -1,32 +1,11 @@
-<div id="<%= dom_id salary %>" class="pt-32">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= salary.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Company:</strong>
-    <%= salary.company %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City:</strong>
-    <%= salary.city %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Seniority:</strong>
-    <%= salary.seniority %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Salary:</strong>
-    <%= salary.salary %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this salary", salary, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this salary', edit_salary_path(salary), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+<div id="<%= dom_id salary %>" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <%= content_tag :tr, id: dom_id(salary) do %>
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 font-light">
+      <td class="px-6 py-4"><%= salary.title %></td>
+      <td class="px-6 py-4"><%= salary.company %></td>
+      <td class="px-6 py-4"><%= salary.city %></td>
+      <td class="px-6 py-4"><%= salary.seniority %></td>
+      <td class="px-6 py-4"><%= SalariesHelper.format_currency_to_xof(salary.salary) %></td>
+    </tr>
   <% end %>
 </div>
