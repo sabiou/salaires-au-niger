@@ -14,6 +14,9 @@
       <%= text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
     <% end %>
   </div>
+  <% unless @salaries.any? %>
+  <p class="text-red-900 pt-5">Pas de donnees disponible </p>
+  <%  end %>
   <div id="salaries" class="min-w-full pt-8">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -37,43 +40,15 @@
         </tr>
         </thead>
         <tbody>
-        <% @salaries.each do |salary| %>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 font-light">
-            <td class="px-6 py-4">
-              <turbo-frame id="title-">
-                <%= salary.title %>
-              </turbo-frame>
-            </td>
-            <td class="px-6 py-4">
-              <turbo-frame id="company-">
-                <%= salary.company %>
-              </turbo-frame>
-            </td>
-            <td class="px-6 py-4">
-              <turbo-frame id="city-">
-                <%= salary.city %>
-              </turbo-frame>
-            </td>
-            <td class="px-6 py-4">
-              <turbo-frame id="seniority-">
-                <%= salary.seniority %>
-              </turbo-frame>
-            </td>
-            <td class="px-6 py-4">
-              <turbo-frame id="salary-">
-                <%= salary.salary %> FCFA
-              </turbo-frame>
-            </td>
-          </tr>
-        <% end %>
+        <%= render @salaries %>
         </tbody>
       </table>
     </div>
   </div>
   <div class="pt-5 w-1/5 ">
-    <p class="p-2 text-orange-900 font-light italic">Salaire moyen: <%= @salaries.sum(&:salary) / @salaries.size %> FCFA</p>
+    <p class="p-2 text-orange-900 font-light italic">Salaire moyen: <%= SalariesHelper.avg_salary(@salaries) %></p>
   </div>
-  <div class="pt-5">
+  <div class="pt-5 .pagy-nav a">
     <%== pagy_nav(@pagy) %>
   </div>
   <div class="pt-16">
