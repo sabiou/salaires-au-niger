@@ -2,7 +2,13 @@
   <%= content_tag :tr, id: dom_id(salary) do %>
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 font-light">
       <td class="px-6 py-4"><%= salary.title %></td>
-      <td class="px-6 py-4"><%= salary.company %></td>
+      <td class="px-6 py-4">
+        <% if @companies[salary.company].count >= 3 %>
+          <%= salary.company %>
+        <% else %>
+          Anonyme
+        <% end %>
+      </td>
       <td class="px-6 py-4"><%= salary.city %></td>
       <td class="px-6 py-4"><%= salary.seniority %></td>
       <td class="px-6 py-4"><%= SalariesHelper.format_currency_to_xof(salary.salary) %></td>
