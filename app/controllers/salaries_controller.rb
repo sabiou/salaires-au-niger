@@ -9,6 +9,7 @@ class SalariesController < ApplicationController
   def index
     filtered = Salary.where("title LIKE ?", "%#{params[:filter]}%").all
     @pagy, @salaries = pagy(filtered.all, items: 10)
+    @companies = Salary.all.group_by(&:company)
   end
 
   # GET /salaries/1 or /salaries/1.json
