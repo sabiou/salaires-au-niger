@@ -7,7 +7,7 @@ class SalariesController < ApplicationController
   #   @salaries = Salary.all
   # end
   def index
-    filtered = Salary.where("title LIKE ?", "%#{params[:filter]}%").all
+    filtered = Salary.where("title LIKE ? OR company LIKE ? OR city LIKE ?", "%#{params[:filter]}%", "%#{params[:filter]}%", "%#{params[:filter]}%").all
     @pagy, @salaries = pagy(filtered.all, items: 10)
     @companies = Salary.all.group_by(&:company)
   end

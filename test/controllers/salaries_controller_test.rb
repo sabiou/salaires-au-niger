@@ -78,4 +78,20 @@ class SalariesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'td:nth-child(2)', text: company, count: 0
   end
 
+  test "filter salaries by title, company name, or city" do
+    Salary.create!(title: "Manager", company: "Niger Telecoms", city: "Maradi", seniority: "+5ans", salary: 500000)
+    Salary.create!(title: "Ingenieur Reseaux", company: "Niger Telecoms", city: "Niamey", seniority: "+5ans", salary: 400000)
+    Salary.create!(title: "Designer", company: "diool", city: "Maradi", seniority: "3-5ans", salary: 300000)
+
+    get salaries_path, params: { filter: "Maradi" }
+    assert_response :success
+    assert_select 'td:nth-child(1)', text: "Manager", count: 1
+    assert_select 'td:nth-child(1)', text: "Designer", count: 1
+
+    get salaries_path, params: { filter: "Niger Telecoms" }
+    assert_response :success
+    assert_select 'td:nth-child(1)', text: "Ingenieur Reseaux", count: 1
+    assert_select 'td:nth-child(3)', text: "Niamey", count: 1
+  end
+
 end
