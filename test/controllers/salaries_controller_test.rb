@@ -45,4 +45,37 @@ class SalariesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to salaries_url
   end
+
+  # Display the company name only if there are 3 or more salaries from the same company
+  test "show company name if there are 3 or more salaries with the same company name" do
+    title = "Accountant"
+    company = "Acme Inc."
+    city = "Maradi"
+    seniority = "0-3ans"
+    salary = 170000
+    3.times do
+      Salary.create!(title: title, company: company, city: city, seniority: seniority, salary: salary)
+    end
+
+    get salaries_url
+    assert_response :success
+    assert_select 'td:nth-child(2)', text: company, count: 3
+  end
+
+  test "Show 'Anonyme' if there are less than 3 salaries with the same company name" do
+    title = "Full Stack Developer"
+    company = "Meridian"
+    city = "Agadez"
+    seniority = "5ans"
+    salary = 600000
+    2.times do
+      Salary.create!(title: title, company: company, city: city, seniority: seniority, salary: salary)
+    end
+
+    get salaries_url
+    assert_response :success
+    assert_select 'td:nth-child(2)', text: "Anonyme", count: 2
+    assert_select 'td:nth-child(2)', text: company, count: 0
+  end
+
 end
