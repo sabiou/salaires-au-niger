@@ -46,6 +46,21 @@ class SalariesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to salaries_url
   end
 
+  test "salary filter with query that match either title, company or city" do
+    get salaries_url, params: {filter: "Maradi"}
+    assert_response :success
+    assert_select 'td:nth-child(3)', text: "Maradi"
+  end
+
+  test "should not save salary without title" do
+    company = "Acme Inc."
+    city = "Maradi"
+    seniority = "0-3ans"
+    salary = 170000
+    salary = Salary.new(company: company, city: city, seniority: seniority, salary: salary)
+    assert_not salary.save, "Saved the salary without a title"
+  end
+
   # Display the company name only if there are 3 or more salaries from the same company
   test "show company name if there are 3 or more salaries with the same company name" do
     title = "Accountant"
@@ -92,6 +107,16 @@ class SalariesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'td:nth-child(1)', text: "Ingenieur Reseaux", count: 1
     assert_select 'td:nth-child(3)', text: "Niamey", count: 1
+  end
+
+  test "format currency to XOF" do
+    assert_equal "170.000 XOF", SalariesHelper.format_currency_to_xof(170000)
+  end
+
+  # test average salary helper method
+  test "average salary" do
+    salaries = Salary.where(city: "Maradi")
+    assert_equal "1.200.000 XOF", SalariesHelper.avg_salary(salaries)
   end
 
 end
