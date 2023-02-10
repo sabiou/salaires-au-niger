@@ -17,6 +17,9 @@ gem "turbo-rails", "1.1.1"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails", "1.0.4"
 
+# Faker
+gem "faker", "3.1.1"
+
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
 
