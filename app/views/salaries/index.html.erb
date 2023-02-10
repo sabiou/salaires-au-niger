@@ -3,12 +3,12 @@
     <p class="mt-32 py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center pt-32">
-    <h1 class="font-semibold text-4xl">Salaires au Niger 🇳🇪</h1>
+  <div class="flex justify-between items-center pt-24">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none text-gray-900 md:text-5xl lg:text-4xl">Salaires au Niger</h1>
     <%= link_to 'Contribuer', new_salary_path, class: "rounded-lg py-2 px-5 bg-orange-900 text-white block font-bold" %>
   </div>
-  <h2 class="font-semibold pt-2">Contribuer à la plateforme en ajoutant votre salaire.
-    <span class="italic underline decoration-orange-900 decoration-2 p-1 font-thin">C'est 100% anonyme</span></h2>
+  <h2 class="font-extrabold pt-2">Contribuer à la plateforme en ajoutant votre salaire.
+    <span class="text-orange-700 p-1">C'est 100% anonyme.</span></h2>
   <div>
     <%= form_with url: salaries_path, method: :get, data: { turbo_frame: "salaries", turbo_action: "advance", controller: "form", action: "input->form#submit" } do %>
       <%= text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
