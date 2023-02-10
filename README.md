@@ -57,3 +57,5 @@ If the test suite passes, you’ll be ready to seed the database with sample sal
 $ rails db:seed
 $ rails server
 ```
+
+#### This project is inspired by OSSCameroon's [JobSika](https://jobsika.cm/)
