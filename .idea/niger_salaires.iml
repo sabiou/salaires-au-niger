@@ -28,6 +28,7 @@
     </content>
     <orderEntry type="jdk" jdkName="RVM: ruby-3.2.0" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="prismjs" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -102,6 +103,7 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.6, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" name="flowbite" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

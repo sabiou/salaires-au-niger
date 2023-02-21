@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <title>Niger Salaires</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-</head>
+  <%= render 'shared/head' %>
 <body>
 <%= render 'shared/banner' %>
+<%= render 'shared/navbar' %>
 
 <main class="container mx-auto text-gray-500 px-4 sm:px-6 lg:px-8 mt-8">
   <%= yield %>
 </main>
 <%= render 'shared/footer' %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
 
 </body>
 </html>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "components/nav.scss";
+@import "components/buttons.scss";
+@import "tippy.js/dist/tippy.css";
+
 /*
 
 @layer components {
