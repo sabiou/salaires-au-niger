@@ -4,18 +4,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "7.0.4"
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails", "3.4.2"
+gem "sprockets-rails"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails", "1.1.0"
+gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails", "1.1.1"
+gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails", "1.0.4"
+gem "stimulus-rails"
+
+gem 'ransack'
 
 # Faker
 gem "faker", "3.1.1"
@@ -30,9 +33,9 @@ gem "puma", "5.6.4"
 gem "tailwindcss-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder", "2.11.5"
+gem "jbuilder"
 
-gem 'pagy', '~> 6.0' # omit patch digit
+gem 'pagy'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -86,4 +89,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem.
 # Uncomment the following line if you're running Rails
 # on a native Windows system:
-# gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

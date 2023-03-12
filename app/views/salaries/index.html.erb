@@ -4,19 +4,19 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="mb-4 text-4xl font-extrabold leading-none text-gray-900 md:text-5xl lg:text-4xl">Salaires au Niger</h1>
+    <h1 class="mb-4 text-4xl font-semibold leading-none text-gray-900">Salaires au Niger</h1>
     <%= link_to 'Contribuer', new_salary_path, class: "rounded-lg py-2 px-5 bg-orange-900 text-white block font-bold" %>
   </div>
-  <h2 class="font-extrabold pt-2">Contribuer à la plateforme en ajoutant votre salaire.
-    <span class="text-orange-700 p-1">C'est 100% anonyme.</span></h2>
-  <div>
-    <%= form_with url: salaries_path, method: :get, data: { turbo_frame: "salaries", turbo_action: "advance", controller: "form", action: "input->form#submit" } do %>
-      <%= text_field_tag "filter", nil, placeholder: "Filtrer", class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
-    <% end %>
-  </div>
-  <% unless @salaries.any? %>
-  <p class="text-red-900 pt-5">Pas de donnees disponible </p>
-  <%  end %>
+  <h2 class="font pt-2">
+    Contribuer à la plateforme en ajoutant votre salaire.
+    <span class="text-orange-700 p-1">C'est 100% anonyme.</span>
+  </h2>
+
+  <%= search_form_for @q, data: { turbo_frame: "results", debug: true } do |f| %>
+    <%= f.search_field :company_or_city_cont, class: "mt-8 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-96" %>
+  <% end %>
+
+  <%= turbo_frame_tag "results" do %>
   <div id="salaries" class="min-w-full pt-8">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -51,6 +51,8 @@
   <div class="pt-5 .pagy-nav a">
     <%== pagy_nav(@pagy) %>
   </div>
+  <% end %>
+
   <div class="pt-16">
     <a href="https://github.com/sabiou/salaires-au-niger/" target="_blank">
       <button type="button" class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2">
