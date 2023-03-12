@@ -29,17 +29,18 @@
     <orderEntry type="jdk" jdkName="RVM: ruby-3.2.0" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="prismjs" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" name="flowbite" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actiontext (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.12.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -52,6 +53,7 @@
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.5.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faker (v3.1.1, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.15.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.0.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.12.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="importmap-rails (v1.1.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -59,7 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.19.1, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.0.1, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="matrix (v0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v1.0.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -78,15 +80,18 @@
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.6.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.0.2, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.5.0, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ransack (v4.0.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.6.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.3.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -94,6 +99,8 @@
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.0.4, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tailwindcss-rails (v2.0.21, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.2.1, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.11, RVM: ruby-3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.3.2, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.1.1, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
@@ -103,7 +110,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.6, RVM: ruby-3.2.0) [gem]" level="application" />
-    <orderEntry type="library" name="flowbite" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
@@ -133,6 +139,8 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -166,6 +174,8 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />

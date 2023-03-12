@@ -6,10 +6,17 @@ class SalariesController < ApplicationController
   # def index
   #   @salaries = Salary.all
   # end
+  # def index
+  #   filtered = Salary.where("title LIKE ? OR company LIKE ? OR city LIKE ?", "%#{params[:filter]}%", "%#{params[:filter]}%", "%#{params[:filter]}%").all
+  #   @pagy, @salaries = pagy(filtered.all, items: 10)
+  #   @companies = Salary.all.group_by(&:company)
+  # end
+
   def index
-    filtered = Salary.where("title LIKE ? OR company LIKE ? OR city LIKE ?", "%#{params[:filter]}%", "%#{params[:filter]}%", "%#{params[:filter]}%").all
-    @pagy, @salaries = pagy(filtered.all, items: 10)
-    @companies = Salary.all.group_by(&:company)
+    @q = Salary.ransack(params[:q])
+    @salaries = @q.result(distinct: true)
+    @companies = Salary.ransack.result(distinct: true).group_by(&:company)
+    @pagy, @salaries = pagy(@salaries, items: 10)
   end
 
   # GET /salaries/1 or /salaries/1.json
